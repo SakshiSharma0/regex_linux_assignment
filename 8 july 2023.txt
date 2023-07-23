@@ -1,0 +1,99 @@
+8 july 2023
+
+--------------  8 july 2023 FIND ASSIGNMENTS  -------------
+1 a- truncate -s 100M 100mb.txt
+   b- find . -size +50M  
+        find /home/sakshiq18 -type f -size +50M
+
+2 find . -user sakshiq18 -type f
+
+3 find /home/sakshiq18/ -cmin -10 -ls
+                        
+   cmin for created files
+   mmin for modified files
+
+find /home/sakshiq18 -type f 
+
+f for file 
+d for directory
+
+5 find /home/sakshiq18/ -user sakshiq18 -exec cp -r {} /home/sakshiq18/backupLINUX \;
+
+dd if=/dev/zero of=1mb.txt bs=1M count=1
+
+
+
+2-------------  8 july 2023 TAR --------------------------
+1 - create a file abc  and then make a tar of it
+create a file userinfo and then make a tar of it with previous tar name
+-touch abc.txt
+-tar -cvf prac1.tar abc.txt
+-touch userinfo.txt
+-tar -rvf prac1.tar userinfo.txt
+
+
+2 - remove 1 or 2 file from tar 
+-tar -vf prac1.tar --delete sim.txt 
+
+
+3 - Create a tar file and extract all content from it
+again extract all these file in backup folder no use of copy and move command
+- tar -xvf prac1.tar
+- tar -xf prac1.tar -C /home/sakshiq18/backup
+
+
+
+4 - write a bash program to print some value where the input is given by user.
+-touch userinput.sh
+vi userinput.sh 
+
+#!/bin/bash
+# Prompt the user to enter a value
+echo "Enter a value:"
+# Read the user's input
+read value
+# Print the entered value
+echo "The entered value is: $value"
+
+chmod +x userinput.sh 
+bash userinput.sh OR ./userinput.sh 
+
+
+5 - Write down a program which should print the current date and all the files & folders present at current location
+touch currentdate.sh
+vi currentdate.sh
+#!/bin/bash
+
+# Print the current date and time
+echo "Current date and time: $(date)"
+
+# Print the list of files and folders in the current directory
+echo "Files and folders in the current directory:"
+ls -l
+chmod -x currentdate.sh
+bash currentdate.sh or ./currentdate.sh 
+
+-----------------  WILD CARDS  --------------
+0 or more characters
+1 character
+range of characters
+
+
+
+-----------------  TAR  --------------
+
+tar automatically doesnt reduce file size
+
+tar -cvf user.tar data.txt
+tar -xvf user.tar
+tar -tvf user.tar
+tar -czf user.tgz
+tar -czf user.tar.gz
+tar -vf prac1.tar --delete sim.txt 
+tar -tvf prac1.tar
+tar -rvf prac1.tar userinfo.txt
+ tar -xf prac1.tar -C /home/sakshiq18/backup
+
+gzip  gz
+
+bzip

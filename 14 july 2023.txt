@@ -1,0 +1,67 @@
+14 july 2023 ASSIGNMENTS
+
+1 - in home user 
+create a user ali
+create a foldr test in home current user
+craete a folder data.txt
+check owner group of file
+owner ali ,group regex  change it using one files
+group regex have tushar and ali 7user
+file owner - rwx , group rw
+
+
+sudo adduser ali
+mkdir test
+ls -lh
+cd test
+touch data.txt
+ls -alh
+sudo groupadd regex
+getent group | grep regex
+sudo adduser tushar
+sudo usermod -a -G regex tushar
+sudo chown ali:regex data.txt
+ls -alh
+sudo chmod 764 data.txt    //sudo chmod ugo+rwx data.txt
+
+
+
+
+
+2 -create 2 user aman and aditya cd 
+  create a folder /home/user/linux
+  this folder group change to regex
+   login through aman create delete files
+   login thorugh aditya create delete files
+aman and aditya should delete their files only 
+
+sudo adduser aman
+sudo adduser aditya
+mkdir linux
+sudo chown :regex linux
+ls -alh
+sudo usermod -a -G regex aman
+sudo usermod -a -G regex aditya
+chmod 1775 linux
+sudo chown :regex linux
+su -aman
+ls
+touch 1.java
+chmod 1775 1.java
+chown :regex 1.java
+ls
+su -aditya
+ls
+touch aditya.java
+ls 
+rm 1.java  //not permitted now
+ls
+touch aditya.java
+chmod 1775
+chown :regex aditya.java
+
+
+
+3- folder have 777 and file 666
+
+BECAUSE files by default doesn't require execute permission as files mostly require only read write permissions

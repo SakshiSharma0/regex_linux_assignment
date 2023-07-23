@@ -1,0 +1,75 @@
+7  july 2023
+
+---------------  NOTES  -------------------
+VI editor
+
+vi,vim,nano......  cli based
+
+vi by defalut installed
+
+
+vi editor -insert and command mode
+
+i,a,o for insert mode
+esc for command mode
+
+
+vi data.txt
+
+i
+hello to google
+:w for write
+:q for quit
+:wq  for write and quit
+
+
+yy to copy multiple lines
+
+5yy  to copy 5 lines
+dd 
+p 
+
+3gg  to go to particular line
+shift+g
+gg
+u
+
+
+-----------------  7 july 2023 ASSIGNMENTS -----------
+1. how to permanently execute alias command 
+vi ~/.bashrc
+#custom alias
+alias my="ls -lh /home/sakshiq18"
+alias c="mkdir newfolder"
+:wq
+source ~/.bashrc
+c
+my
+
+
+
+2. search a partcular word and replace it with regex
+:set ignorecase
+/\cexample
+for next occurence n
+for previous occurence N
+(for search and replace)   :%s/\ctushar/regex/ g  
+ i for caseinsensitive or 
+ g for global (all)
+
+
+3. perform redo   =  .
+
+
+4. cut 1 word and paste it  = dd and then p
+
+
+5. copy some words from 1 line then copy from 2 line paste it in new line
+vi data.txt
+select something and press "Ay
+again select something and press "Ay
+for new line go to insert mode by pressing(a,o or i) and go to new line
+press esc for command mode
+press "Ap
+a is register here
+

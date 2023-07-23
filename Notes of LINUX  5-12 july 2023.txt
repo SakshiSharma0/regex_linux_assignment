@@ -1,0 +1,32 @@
+Notes of LINUX  5-12 july 2023
+
+pwd
+ls
+mkdir
+rmdir // deletes empty folder
+cd
+cd /   //to go to root
+cd ..   //to move upper
+touch //to make a file
+rm -rv
+rm -dv
+rm -rvf *
+cp
+ls -l
+man 
+rm -rf *
+head filename  ...  shows first 10 lines
+tail filename  ...  shows last 10 lines
+tac   shows rebverse data
+alias a = "rm -rv data.txt"
+cp /home/sakshiq18/test .
+yes "data" > filename and then press ctrl+c
+
+cat filename shows data of file
+
+use tab for autofill
+
+-r   recursive
+-l for more detail
+rm deletes file bydefault so -d is used to delete folder
+-v verbos dikhana kya horha ya kaise delete horha

@@ -1,0 +1,205 @@
+11 july 2023
+  
+
+---------------------  NOTES  ----------------------
+whoami
+
+cat /etc/passwd   ( /etc/passwd file have all users)
+tail -2 /etc/passwd
+
+user - root/admin
+
+useradd -m rohan
+sudo useradd -m komal
+//sudo allows a permitted user to execute a command as the superuser or another user
+
+ls /home
+
+sudo passwd  komal
+
+su means switch user
+
+komal passwoRD -123
+
+whoami
+
+exit (for logout)
+
+ls -lh (-l for longlist)
+permssion links owner group size timestamp filename
+
+case
+I bought car
+so i am owner 
+family is group (collection of user)
+others(apart from owner or group)
+
+u user
+g group
+o others
+
+10 values -rw-r--r--
+r read
+w write
+x execute
+
+  uuu ggg ooo
+- rwx rwx rwx
+
+
+su -komal
+cd /home/sakshiq18
+ls
+ls -lh data.txt
+vi data.txt
+cat data.txt
+exit
+
+whoami
+ls -lh data.txt
+chmod o+w data.txt
+ls -lh data.txt
+chmod go+rwx data.txt
+chmod go-rwx data.txt
+
+file -rwxr-xr-x
+r - read content
+w -  write/modify
+x - execute //as a program
+
+folder  drwxr-xr-x 
+r - ls
+w - create/delete files
+x - cd command
+
+whenever we create user a group  is created
+
+user is part of this group
+
+this is primary group (user is part of this group)
+supllimentary group created by other
+
+
+
+
+
+
+------------   11 july 2023 assignments  -------------
+sudo useradd -m username // to create user in hoem directory
+
+
+1 - we need to create a user identity - 5000
+we need to add it to group named sales
+this user's account should expire after 3 days
+this user should get a shell named /bin/sh
+
+sudo groupadd -g 5000 sales
+sudo useradd -u 5000  -s /usr/bin/sh -g sales -c "Test User Account" -e 2023-07-14 test
+
+TO CHECK
+getent group | grep sales
+id -u test
+id -gn test
+id test
+sudo chage -l username
+grep username /etc/passwd
+All this work should be done with single command
+
+
+
+2 - create two groups named marketing and hr
+add komal to marketing and then check
+add komal to hr and then check
+- problem is komal will move to hr so make sure klomal user should be  memeber of both groups
+
+sudo groupadd marketing
+sudo groupadd hr
+
+- sudo useradd -g komal -G marketing,hr komal
+
+sudo usermod -a -G marketing komal
+sudo usermod -a -G hr komal
+The following command creates a new user named username with primary group users and secondary groups wheel and docker.
+-- sudo useradd -g users -G wheel,developers username
+
+
+
+
+3- when i create file rwxrw-rw- permission should be default
+setfacl -m u::rwx,g::rw-,o::rw- dummy_dir/
+
+ vi ~/.bashrc  
+umask 0011
+umask u=rwx, o
+source ~/.bashrc
+
+4- data.txt abc.txt and other files 
+3 files are there
+whenever a new user is created ....new user should have all these 3 files 
+sudo mkdir /etc/skel/files
+sudo cp data.txt abc.txt t.txt /etc/skel/files/
+sudo chmod 644 /etc/skel/files/*
+sudo adduser  newuser
+
+
+
+5 - date command prints date and time ...   date command should execute after every 5 min ... and all this content should be in a file
+vi date_script.sh
+#!/bin/bash
+date >> output.txt
+:wq
+chmod +x date_script.sh
+crontab -e
+*/5 * * * * /home/sakshiq18/date_script.sh
+
+  OR
+
+#!/bin/bash
+
+# Specify the file path to write the output
+output_file="output.txt"
+
+# Infinite loop
+while true; do
+    # Execute the date command and append the output to the file
+    date >> "$output_file"
+
+    # Delay for 5 minutes (300 seconds)
+    sleep 300
+done
+
+
+
+6 - when a user gives number
+      1 - print current location data or files
+      2 - date command
+      3 - create a new user named abc'
+      4 - delete abc user
+script.sh
+
+#!/bin/bash
+
+read -p "Enter a number (1-4): " choice
+
+case $choice in
+    1)
+        echo "Current Location Data or Files:"
+        ls -al
+        ;;
+    2)
+        echo "Current Date and Time:"
+        date
+        ;;
+    3)
+             sudo adduser abc
+        ;;
+    4)
+              sudo userdel -r abc
+        ;;
+    *)
+        echo "Invalid choice"
+        ;;
+esac
+
+bash script.sh
+

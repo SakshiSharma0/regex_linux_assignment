@@ -1,0 +1,63 @@
+-----------12 july 2023..13 july NOTES  -------------
+
+version number - version control
+
+git
+local 
+centralised    -- single point of failure
+distributed
+
+
+
+shelf (with products)        trolly(temporary area of product)           billing counter(price )
+
+working  directory               staging area                             git repository
+      
+
+cd /f/12july
+git init
+touch .abc happy.html
+ls -alh  //a for hidden file ,lh for long list ,l for short list
+git add filename
+git commit
+git status
+git config --global user.name "Sakshi Sharma"
+git config --global user.email "sakshiq18@gmail.com"
+git remote add origin https://github.com/SakshiSharma0/12july.git
+git branch -M main
+git push -u origin main  //asks for login
+git add .
+git commit -m "test"
+git push
+git branch
+git branch test
+git checkout test
+touch 3 files
+git checkout main
+git merge test
+
+ls -a
+.abc.txt //hidden files
+
+red and untracked means presnet working directory mein
+ hai
+green mtln stage hogyi
+
+git config --global user.name "Sakshi Sharma"
+git config --global user.email "sakshiq18@gmail.com"
+
+git commit
+"he we inserted"
+changes are done at local system
+
+git is a software
+github is a platform
+
+
+token system in github
+
+
+
+BRANCHES  branching
+
+original data -> copy(branch)  -> if branch data is corec then merge

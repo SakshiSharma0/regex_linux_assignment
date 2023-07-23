@@ -1,0 +1,32 @@
+15 July 2023 - - EXTRA QUESTIONS
+
+1. Compress file without using tar command
+     zip unb.zip unb.txt 
+     xz unb.txt
+
+2. Create a user and give it administrative privileges
+    sudo vi sudo
+    aman ALL=(ALL:ALL)
+
+3. Create a new user and give it different default location other than / or /home
+    sudo useradd -m -d /home/sakshiq18 abhishek
+
+4.
+In Linux, there are three special permissions that are in addition to the regular read, write, and execute permissions (rwx). These special permissions are also known as "setuid," "setgid," and "sticky bit." They are represented by single letters in the permission string.
+
+1. Setuid (s): The setuid permission allows a user to execute a program with the permissions of the program's owner rather than the user who is executing it. When a program has the setuid bit set, it will be executed with the same permissions as the owner of the program, regardless of who executes it. This is often used for programs that require elevated privileges to perform certain tasks.
+
+   Example:
+   -rwsr-xr-x 1 root    root    10000 Jul 23 10:00 some_program
+  
+
+2. Setgid (s): The setgid permission works similarly to setuid but is applied to directories. When the setgid bit is set on a directory, any files created within that directory will inherit the group ownership of the parent directory, rather than the primary group of the user creating the file. This is useful for shared directories where multiple users need to access files with the same group ownership.
+
+   Example:
+   drwxr-sr-x 2 usergroup  developers 4096 Jul 23 10:00 shared_directory
+   
+
+3. Sticky bit (t): The sticky bit is often used on directories to ensure that only the owner of a file can delete or rename their own files within that directory. It prevents other users from deleting or modifying files owned by someone else within the directory, even if they have write permissions on the directory. This is commonly used for shared directories where users have write access but should not be able to modify other users' files.
+
+   Example:
+   drwxrwxrwt 2 user      user        4096 Jul 23 10:00 temp_directory

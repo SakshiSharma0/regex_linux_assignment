@@ -1,0 +1,42 @@
+6 july 2023
+
+1.-------------
+
+create folder document at current user
+mkdir document
+
+goto document folder
+cd /document
+
+create folder in document -tushar and aman
+mkdir tushar aman
+
+without cd create 2 files inside tushar folder
+touch /home/sakshiq18/document/tushar/1.txt 2.txt
+
+without cd copy these 2  files to aman 
+cp /tushar/1.txt 2.txt  /home/sakshiq18/document/aman/
+
+from tushar folder without cd delete 1 file
+rm -v /home/sakshiq18/document/tushar/1.txt 
+
+
+2.-------------
+
+folder - user
+mkdir user
+
+user have 400 files
+touch /user/{1..400}.txt
+
+delete first 100 files
+rm -rv /user/{1..100}.txt
+
+101-300 cp to test folder
+cp /user/{101..300}.txt /test
+
+301-305 files delete but with warning for each
+rm -iv /user{301..305}.txt
+
+cp user folder to test folder
+cp /user /test

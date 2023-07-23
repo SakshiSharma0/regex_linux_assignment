@@ -1,0 +1,55 @@
+5 july 2023
+
+1.-------------
+create a folder regex backup
+mkdir backup regex
+
+file linux in regex
+cd /regex
+touch linux
+
+cp linux to /home/user/backup
+cp linux /home/sakshiq18/backup
+
+
+2.-------------
+
+create folder desktop
+mkdir desktop
+
+2 folder 
+ cd desktop 
+ mkdir t1 t2
+
+2 file
+ touch f1.txt f2.txt
+
+delete 1 file and 1 folder
+ rm f1.txt t1
+
+delete desktop
+rm -rv desktop
+
+
+3.-------------
+
+create a folder learning
+mkdir learning
+
+regex folder in learning
+cd learning
+mkdir regex 
+
+regex have data.txt
+cd regex
+touch data.txt
+
+cp data.txt to  /home/user
+cp data.txt /home/sakshiq18
+
+4. -------------
+folder - test
+mkdir test
+
+move data.txt to test folder
+cp data.txt /test
